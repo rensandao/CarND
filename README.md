@@ -19,7 +19,7 @@ Assuming you have 'cmake' and 'make' already:
 
 ## Sensor Fusion General Processing Flow
 
-<img src="./Visualized Images/Track2-Data Map.png" width="400px">
+<img src="./Images/Map.png" width="400px">
 
 ## Datas and Results
 
@@ -38,10 +38,7 @@ The EKF accuracy was:
     Dataset 1 : RMSE <= [0.0973, 0.0855, 0.4513, 0.4399]
     Dataset 2 : RMSE <= [0.0726, 0.0965, 0.4216, 0.4932]
 
-
-<img src="./Visualized Images/Track2-Data Map.png" width="400px">
-
-<img src="./Visualized Images/Track2-Data Map.png" width="400px">
+<img src="./Images/Dataset1.png" width="400px">  <img src="./Images/Dataset2.png" width="400px">
 
 
 
