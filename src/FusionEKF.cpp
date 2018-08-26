@@ -36,9 +36,6 @@ FusionEKF::FusionEKF() {
     * Finish initializing the FusionEKF.
     * Set the process and measurement noises
   */
-
-
-
   H_laser_ << 1, 0, 0, 0,
 	0, 1, 0, 0;
   
@@ -59,9 +56,6 @@ FusionEKF::FusionEKF() {
              0, 1, 0, 0,
              0, 0, 1000, 0,
 	     0, 0, 0, 1000;
-
- //(x, F, H_laser, H_jacobian, P, etc.)
-
 }
 
 /**
@@ -128,7 +122,8 @@ void FusionEKF::ProcessMeasurement(const MeasurementPackage &measurement_pack) {
      * Use noise_ax = 9 and noise_ay = 9 for your Q matrix.
    */
   //compute the time elapsed error 
-  float dt = (measurement_pack.timestamp_ - previous_timestamp_) / 1000000.0;	  previous_timestamp_ = measurement_pack.timestamp_;
+  float dt = (measurement_pack.timestamp_ - previous_timestamp_) / 1000000.0;	  
+  previous_timestamp_ = measurement_pack.timestamp_;
 
   //caculate F matrix 
   ekf_.F_ = MatrixXd(4, 4);
