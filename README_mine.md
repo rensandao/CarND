@@ -21,8 +21,14 @@ Assuming you have 'cmake' and 'make' already:
 
 <img src="./Visualized Images/Track2-Data Map.png" width="400px">
 
-## Results
+## Datas and Results
 
+The simulator provides two datasets. The difference between them are:
+
+    The direction the car (the object) is moving.
+    The order the first measurement is sent to the EKF. On dataset 1, the LIDAR measurement is sent first. 
+    On the dataset 2, the RADAR measurement is sent first.
+    
 In two different simulated runs, my Extended Kalman Filter produces the below results in the form of [px, py, vx, vy]. The x-position is shown as 'px', 
 y-position as 'py', velocity in the x-direction is 'vx', while velocity in the y-direction is 'vy'.Residual error is 
 calculated by mean squared error (MSE).
@@ -38,11 +44,6 @@ The EKF accuracy was:
 <img src="./Visualized Images/Track2-Data Map.png" width="400px">
 
 
-The simulator provides two datasets. The difference between them are:
 
-    The direction the car (the object) is moving.
-    The order the first measurement is sent to the EKF. On dataset 1, the LIDAR measurement is sent first. 
-    On the dataset 2, the RADAR measurement is sent first.
-    
     
 
