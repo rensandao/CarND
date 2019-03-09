@@ -133,8 +133,8 @@ int main() {
 					ws.send(msg.data(), msg.length(), uWS::OpCode::TEXT);
 				}  // end "telemetry" if
 			} else { 
-			std::string msg = "42[\"manual\",{}]";
-			ws.send(msg.data(), msg.length(), uWS::OpCode::TEXT);
+				std::string msg = "42[\"manual\",{}]";
+				ws.send(msg.data(), msg.length(), uWS::OpCode::TEXT);
 			}
 		}  // end websocket message if
 	}); // end h.onMessage
