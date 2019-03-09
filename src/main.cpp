@@ -27,22 +27,21 @@ std::string hasData(std::string s) {
 	return "";
 }
 
-int main()
-{
-  uWS::Hub h;
+int main() {
+	uWS::Hub h;
+	// Create a Kalman Filter instance
+  	FusionEKF fusionEKF;
 
-  // Create a Kalman Filter instance
-  FusionEKF fusionEKF;
+	// used to compute the RMSE later
+	Tools tools;
+	vector<VectorXd> estimations;
+	vector<VectorXd> ground_truth;
 
-  // used to compute the RMSE later
-  Tools tools;
-  vector<VectorXd> estimations;
-  vector<VectorXd> ground_truth;
-
-  h.onMessage([&fusionEKF,&tools,&estimations,&ground_truth](uWS::WebSocket<uWS::SERVER> ws, char *data, size_t length, uWS::OpCode opCode) {
-    // "42" at the start of the message means there's a websocket message event.
-    // The 4 signifies a websocket message
-    // The 2 signifies a websocket event
+	h.onMessage([&fusionEKF,&tools,&estimations,&ground_truth](uWS::WebSocket<uWS::SERVER> ws, 
+															   char *data, size_t length, uWS::OpCode opCode) {
+		// "42" at the start of the message means there's a websocket message event.
+		// The 4 signifies a websocket message
+		// The 2 signifies a websocket event
 
     if (length && length > 2 && data[0] == '4' && data[1] == '2')
     {
